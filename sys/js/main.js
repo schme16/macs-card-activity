@@ -129,24 +129,26 @@ angular.module('Mental Activity Cards', [])
 				colour: `#88c0c3`,
 			},
 		]
-		
-		
+
+
 		m.showCard = (card) => {
 			m.$root.card = card
 			m.$root.modalActive = true
 			m.$applyAsync()
-			
+
 		}
-		
+
 		m.hideCard = () => {
 			m.$root.modalActive = false
 			m.$applyAsync()
-			
+
 			setTimeout(() => {
 				m.$root.card = null
+				m.$applyAsync()
+
 			}, 360)
 		}
-		
+
 	})
 
 	/*Turns off the ng-scope, et al. debug classes*/

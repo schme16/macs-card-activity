@@ -38,7 +38,7 @@
 		<div class="model-content">
 			<h1 class="model-title">{{$root.card.title}}</h1>
 			<p class="model-description">{{$root.card.description}}</p>
-			<img class="modal-image" ng-src="sys/img/{{card.image}}">
+			<img ng-if="!!$root.card" class="modal-image" ng-src="sys/img/{{card.image}}">
 		</div>
 		
 		<div class="model-buttons">
