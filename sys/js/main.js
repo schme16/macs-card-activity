@@ -130,6 +130,23 @@ angular.module('Mental Activity Cards', [])
 			},
 		]
 		
+		
+		m.showCard = (card) => {
+			m.$root.card = card
+			m.$root.modalActive = true
+			m.$applyAsync()
+			
+		}
+		
+		m.hideCard = () => {
+			m.$root.modalActive = false
+			m.$applyAsync()
+			
+			setTimeout(() => {
+				m.$root.card = null
+			}, 360)
+		}
+		
 	})
 
 	/*Turns off the ng-scope, et al. debug classes*/

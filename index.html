@@ -20,15 +20,32 @@
 <body ng-cloak>
 
 <div class="wrapper">
-
+	<h1 class="activity-title">Mental Activity Cards</h1>
+	<p class="activity-description">Blurb to go here</p>
 	<div class="cards">
 		<div class="card" ng-repeat="card in cards" aria-label="{{card.title}}" aria-description="{{card.description}}" ng-click="showCard(card)">
-			<!--<div class="card-description">{{card.description}}</div>-->
 			<img class="card-image" ng-src="sys/img/{{card.image}}">
 			<h1 class="card-title">{{card.title}}</h1>
 		</div>
 	</div>
-	
+
+</div>
+
+<div class="modal" ng-class="{'show-modal': $root.modalActive}">
+	<div class="model-underlay" ng-click="hideCard()"></div>
+	<div class="model-body">
+		
+		<div class="model-content">
+			<h1 class="model-title">{{$root.card.title}}</h1>
+			<p class="model-description">{{$root.card.description}}</p>
+			<img class="modal-image" ng-src="sys/img/{{card.image}}">
+		</div>
+		
+		<div class="model-buttons">
+			<button class="model-back-button" ng-click="hideCard()">Back</button>
+		</div>
+	</div>
+
 </div>
 
 <script src="sys/js/main.js"></script>
