@@ -123,13 +123,16 @@ img.card-image {
     font-weight: 600;
     margin-top: 0;
     line-height: 1;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .model-buttons {
     border-top: 1px solid #cacaca;
-    padding: 20px;
+    padding-top: 10px;
+    margin-bottom: -25px;
     margin-top: 20px;
+    text-align: center;
+    /* cursor: pointer; */
 }
 
 img.modal-image {
@@ -141,4 +144,14 @@ img.modal-image {
 p.model-description {
     font-weight: 300;
     margin: 20px 0;
+    text-align: center;
+}
+
+button.model-back-button {
+    background: none;
+    border: none;
+    text-align: center;
+    padding: 10px 20px;
+    cursor: pointer;
+    /* text-transform: uppercase; */
 }
