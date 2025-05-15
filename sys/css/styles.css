@@ -1,0 +1,35 @@
+html, body {
+	color: #000;
+	font-size: 16px;
+	font-family: 'Open Sans', 'Arial', sans-serif;
+	height: auto;
+	margin: 0;
+	padding: 0;
+	background: #f3f3f4;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+	user-select: none;
+}
+
+.wrapper {
+	padding: 0 40px;
+}
+
+.cards {}
+
+.card {}
+
+.card-title {
+    font-size: 30px;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.card-description {}
+
+img.card-image {}
+
+.card {width: 150px;height: auto;aspect-ratio: 12.44/7.26;min-width: 200px;max-width: 400px;padding: 10px;border-radius: 20px;border: 2px solid #cacaca;background-color: #fff;margin: 10px;}

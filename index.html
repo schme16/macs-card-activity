@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="Mental Activity Cards" lang="en" ng-controller="master">
+<head>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular-csp.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="sys/css/styles.css">
+
+	<!--Scripts-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script>
+
+	<!--The title-->
+	<title>Mental Activity Cards</title>
+
+
+</head>
+<body ng-cloak>
+
+<div class="wrapper">
+
+	<div class="cards">
+		<div class="card" ng-repeat="card in cards" aria-label="{{card.title}}" aria-description="{{card.description}}" ng-click="showCard(card)">
+			<!--<div class="card-description">{{card.description}}</div>-->
+			<img class="card-image" ng-src="sys/img/{{card.image}}">
+			<h1 class="card-title">{{card.title}}</h1>
+		</div>
+	</div>
+	
+</div>
+
+<script src="sys/js/main.js"></script>
+</body>
+</html>
+
