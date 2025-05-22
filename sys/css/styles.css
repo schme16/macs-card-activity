@@ -28,6 +28,8 @@ html, body {
 	align-content: center;
 	justify-content: center;
 	align-items: center;
+	gap: 30px;
+	transition: all 250ms ease-in-out;
 }
 
 .card {
@@ -46,6 +48,7 @@ html, body {
 	justify-content: center;
 	align-items: center;
 	font-weight: bold;
+	min-height: 37px;
 }
 
 .card-description {
@@ -72,7 +75,7 @@ img.card-image {
 	border-radius: 20px;
 	border: 2px solid #cacaca;
 	background-color: #fff;
-	margin: 10px;
+	/* margin: 10px; */
 	display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
@@ -83,7 +86,7 @@ img.card-image {
 	cursor: pointer;
 	user-select: none;
 	app-region: no-drag;
-	-webkit-user-drag: none;
+	/* -webkit-user-drag: none; */
 	vertical-align: top;
 	transition: all 250ms ease-in-out;
 	backface-visibility: hidden;
@@ -230,15 +233,29 @@ span.footer-link {
 	text-decoration: underline;
 }
 
-span.start-sort-activity {
-	font-size: 20px;
+.start-sort-activity {}
+
+.button {
+		font-size: 20px;
 	text-transform: uppercase;
+	white-space: nowrap;
+	width: 149px;
 	border: 1px solid #cacaca;
 	padding: 10px;
 	border-radius: 12px;
 	background-color: #fff;
 	cursor: pointer;
 	transition: all 250ms ease-in-out;
+	text-align: center;
+	transform-origin: center;
+}
+
+.button:hover {
+	filter: brightness(0.85);
+}
+
+.button:active {
+	filter: brightness(0.65);
 }
 
 .header {
@@ -249,14 +266,11 @@ span.start-sort-activity {
 	justify-content: center;
 	align-items: center;
 	margin-bottom: 20px;
-}
-
-span.start-sort-activity:hover {
-	filter: brightness(0.85);
-}
-
-span.start-sort-activity:active {
-	filter: brightness(0.65);
+	transition: all 250ms ease-in-out;
+	opacity: 1;
+	width: 200px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .mode-sorting .card {
@@ -272,4 +286,97 @@ span.start-sort-activity:active {
 	margin: 0;
 	padding: 0;
 	border: 0;
+}
+
+.mode-default .print-sort-activity {
+    width: 0;
+    overflow: hidden;
+    padding: 0;
+    opacity: 0;
+}
+
+.mode-sorting .cards {
+    gap: 4px;
+    max-width: 830px;
+}
+
+.mode-sorting .start-sort-activity {
+    width: 0;
+    overflow: hidden;
+    padding: 0;
+    opacity: 0;
+    margin: auto;
+}
+
+.sorting-activity {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    transition: all 250ms ease-in-out;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: flex-start;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-top: 0;
+}
+
+.mode-sorting .sorting-activity {
+    width: 100%;
+    height: auto;
+    opacity: 1;
+    margin-top: 40px;
+}
+
+.sorting-column {
+    border-right: 3px solid #999;
+    border-left: 3px solid #999;
+    width: calc(100%/3);
+}
+
+.sorting-column-title {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 3px solid #999;
+    font-size: 40px;
+}
+
+.sorting-column:first-child,
+.sorting-column:last-child {
+    border: 0;
+}
+
+
+.sorting-column-dropzone {
+    min-height: calc(100vh - 611px);
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.card.draggable-mirror {
+    transition: none;
+}
+
+.mode-default .print-sort-activity {}
+
+span.fa.fa-arrows {
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: -20px;
+    padding: 20px 0;
+    width: 100%;
+    text-align: center;
+    display: none;
+}
+
+.mode-sorting span.fa.fa-arrows {
+    display: block;
 }

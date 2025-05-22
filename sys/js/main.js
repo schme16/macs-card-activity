@@ -6,6 +6,8 @@ angular.module('Mental Activity Cards', [])
 
 		//Trust a string as renderable HTML
 		m.trustAsHTML = $sce.trustAsHtml
+		
+		m.print = () => {print()}
 
 		m.cards = [
 			{
@@ -209,9 +211,13 @@ angular.module('Mental Activity Cards', [])
 				description: `RESOURCES TEXT TO GO HERE`,
 			})
 		}
-		
+
 		m.setModeToSorting = () => {
-			$root.mode = 'sorting'
+			m.$root.mode = 'sorting'
+			setTimeout(() => {
+				m.$root.hideCardImages = true
+				m.$applyAsync()
+			}, 200)
 		}
 	})
 
@@ -222,6 +228,30 @@ angular.module('Mental Activity Cards', [])
 		}
 	])
 
+
+
+	/*draggable*/
+	.directive('draggableCards', () => {
+		return {
+			restrict: 'A',
+			scope: true,
+			link: (scope, element, attrs) => {
+
+				m.swappable = new Draggable.Sortable(document.querySelectorAll('.sorting-column-dropzone,.cards'), {
+					draggable: '.card',
+					handle: '.fa-arrows',
+					sortAnimation: {
+						duration: 360,
+						easingFunction: 'ease-in-out',
+					},
+					classes: {
+						'draggable:invalid': 'invalid-drop-zone'
+					},
+					plugins: [Draggable.Plugins.SortAnimation],
+				})
+			}
+		}
+	})
 
 /*Sample directive*/
 /*.directive('sampleDirective', () => {
