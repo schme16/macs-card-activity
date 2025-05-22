@@ -14,15 +14,19 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script>
 
 	<!--The title-->
-	<title>Mental Activity Cards</title>
+	<title>Mental Activity Card Sort</title>
 
 
 </head>
 <body ng-cloak>
 
-<div class="wrapper">
-	<h1 class="activity-title">Mental Activity Cards</h1>
-	<p class="activity-description">Blurb to go here</p>
+<div class="wrapper mode-{{$root.mode}}">
+	<h1 class="activity-title">Mental Activity Card Sort</h1>
+	
+	<div class="header">
+		<span class="start-sort-activity" ng-click="setModeToSorting()">Start sorting</span>
+	</div>
+	
 	<div class="cards">
 		<div class="card" ng-repeat="card in cards" aria-label="{{card.title}}" aria-description="{{card.description}}" ng-click="showCard(card)">
 			<img class="card-image" ng-src="sys/img/{{card.image}}">
@@ -32,18 +36,29 @@
 
 </div>
 
+<div class="footer">
+	<span class="footer-link footer-link-instructions" ng-click="showInstructions()">Instructions</span>
+	<span class="footer-link footer-link-acknowledgements" ng-click="showAcknowledgements()">Acknowledgements</span>
+	<span class="footer-link footer-link-resources" ng-click="showResources()">Resources</span>
+</div>
+
 <div class="modal" ng-class="{'show-modal': $root.modalActive}">
-	<div class="model-underlay" ng-click="hideCard()"></div>
-	<div class="model-body">
+	<div class="modal-underlay" ng-click="hideCard()"></div>
+	<div class="modal-body">
 		
-		<div class="model-content">
-			<h1 class="model-title">{{$root.card.title}}</h1>
-			<p class="model-description">{{$root.card.description}}</p>
-			<img ng-if="!!$root.card" class="modal-image" ng-src="sys/img/{{card.image}}">
+		<div class="modal-content">
+			<h1 class="modal-title"  ng-if="$root.card.title">{{$root.card.title}}</h1>
+			<p class="modal-description"  ng-if="$root.card.description">{{$root.card.description}}</p>
+			<p class="modal-author-to-reference"  ng-if="$root.card.authorToReference">{{$root.card.authorToReference}}</p>
+			<img ng-if="!!$root.card" class="modal-image" ng-src="sys/img/{{$root.card.image}}" ng-if="$root.card.image">
+			<div class="modal-references" ng-if="$root.card.references">
+				<h3 class="modal-references">References</h3>
+				<p class="modal-references-entry" ng-bind-html="trustAsHTML($root.card.references)"></p>
+			</div>
 		</div>
-		
-		<div class="model-buttons">
-			<button class="model-back-button" ng-click="hideCard()"> 
+
+		<div class="modal-buttons">
+			<button class="modal-back-button" ng-click="hideCard()"> 
 				<span class="fa fa-arrow-left"></span>
 			    Back
 			</button>
