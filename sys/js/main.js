@@ -6,8 +6,10 @@ angular.module('Mental Activity Cards', [])
 
 		//Trust a string as renderable HTML
 		m.trustAsHTML = $sce.trustAsHtml
-		
-		m.print = () => {print()}
+
+		m.print = () => {
+			print()
+		}
 
 		m.cards = [
 			{
@@ -219,6 +221,9 @@ angular.module('Mental Activity Cards', [])
 				m.$applyAsync()
 			}, 200)
 		}
+
+		setTimeout(() => $(".css-transitions-only-after-page-load").removeClass("css-transitions-only-after-page-load"), 10);
+		
 	})
 
 	/*Turns off the ng-scope, et al. debug classes*/
