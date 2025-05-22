@@ -32,9 +32,6 @@ html, body {
 	transition: all 250ms ease-in-out;
 }
 
-.card {
-}
-
 .card-title {
 	font-size: 16px;
 	text-align: center;
@@ -68,7 +65,8 @@ img.card-image {
 }
 
 .card {
-	width: 160px;
+	/*width: 160px;*/
+	width: 134px;	
 	height: auto;
 	aspect-ratio: 12.44/7.26;
 	padding: 10px;
