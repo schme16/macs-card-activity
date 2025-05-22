@@ -321,6 +321,7 @@ span.footer-link {
     justify-content: space-around;
     align-items: flex-start;
     margin-top: 0;
+    overflow: hidden;
 }
 
 .mode-sorting .sorting-activity {
